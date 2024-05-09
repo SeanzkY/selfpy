@@ -15,12 +15,11 @@ def check_win(secret_word, old_letter_guessed):
 # this function shows the user his progress, it builds the word to reveal from past guesses and the secret word
 def show_hidden_word(secret_word, old_letters_guessed):
     result = ""
-    for i in range(len(secret_word)):
-        letter_to_add = EMPTY_LETTER + SEPARATOR
-        for letter in old_letters_guessed:
-            if secret_word[i] == letter:
-                letter_to_add = letter + SEPARATOR
-        result += letter_to_add
+    for letter in secret_word:
+        if letter in old_letters_guessed:
+            result += letter + SEPARATOR
+        else:
+            result += EMPTY_LETTER + SEPARATOR
     return result
 
 

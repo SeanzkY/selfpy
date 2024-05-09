@@ -14,7 +14,7 @@ def choose_secret_word():
     while not os.path.isfile(file_path):
         file_path = input_file()
     index = input_number()
-    while not index.isalnum():
+    while not index.isnumeric():
         index = input_number()
     return choose_word_from_file(file_path, int(index))
 
