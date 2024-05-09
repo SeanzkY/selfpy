@@ -1,3 +1,9 @@
+from TUI import invalid_input_showcase
+
+SEPARATOR = " "
+EMPTY_LETTER = "_"
+
+
 # this function checks if the user has won or not
 def check_win(secret_word, old_letter_guessed):
     for x in secret_word:
@@ -10,10 +16,10 @@ def check_win(secret_word, old_letter_guessed):
 def show_hidden_word(secret_word, old_letters_guessed):
     result = ""
     for i in range(len(secret_word)):
-        letter_to_add = "_ "
+        letter_to_add = EMPTY_LETTER + SEPARATOR
         for letter in old_letters_guessed:
             if secret_word[i] == letter:
-                letter_to_add = letter
+                letter_to_add = letter + SEPARATOR
         result += letter_to_add
     return result
 
@@ -35,8 +41,7 @@ def try_update_letter_guessed(letter_guessed, old_letters_guessed):
     if check_valid_input(letter_guessed, old_letters_guessed):
         old_letters_guessed.append(letter_guessed)
         return True
-    print(letter_guessed.upper())
-    print(old_letters_guessed)
+    invalid_input_showcase(old_letters_guessed)
     return False
 
 
