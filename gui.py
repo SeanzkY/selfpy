@@ -66,6 +66,24 @@ ASK_FOR_INPUT = "Please guess a letter:"
 
 FAILURE_SIGN = ":("
 
+FILE_INPUT_REQUEST = "Enter file path: "
+
+INDEX_INPUT_REQUEST = "Enter index: "
+
+VICTORY_MESSAGE = "You Won!"
+
+DEFEAT_MESSAGE = "You Lost!"
+
+
+def input_file():
+    file_path = input(FILE_INPUT_REQUEST)
+    return file_path
+
+
+def input_number():
+    index_input = input(INDEX_INPUT_REQUEST)
+    return index_input
+
 
 def opening_screen():
     print(HANGMAN_ASCII_ART)
@@ -79,3 +97,14 @@ def user_input():
 def showcase_failure(numTries):
     print(FAILURE_SIGN)
     print(HANGMAN_PHOTOS[numTries])
+
+
+def showcase_progress(user_progress):
+    print(user_progress)
+
+
+def game_end_status(is_win):
+    if is_win:
+        print(VICTORY_MESSAGE)
+    else:
+        print(DEFEAT_MESSAGE)
