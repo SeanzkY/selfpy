@@ -45,6 +45,10 @@ def choose_word_from_file(file_path, index):
         with open(file_path, "rt") as fileRead:
             fileContent = fileRead.read()
             wordList = fileContent.split()
+            # in case of an empty file error
+            if len(wordList) == 0:
+                print("error! entered an empty file!")
+                return None
             return wordList[index % len(wordList)]
     except OSError as e:
         print("an error has occurred: {}".format(e))

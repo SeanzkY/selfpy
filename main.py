@@ -23,7 +23,8 @@ def choose_secret_word():
 def start_game():
     opening_screen()
     secret_word = choose_secret_word()
-    start_screen()
+    if secret_word is not None:
+        start_screen()
     return secret_word
 
 
