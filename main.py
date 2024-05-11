@@ -30,6 +30,8 @@ def start_game():
 # This function is the main controller, handles the game from start to finish
 def handleGame():
     secret_word = start_game()
+    if secret_word is None:
+        return
     old_letters_guessed = list()
     num_of_tries = 0
     old_user_progress = show_hidden_word(secret_word, old_letters_guessed)

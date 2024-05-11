@@ -86,6 +86,8 @@ START_MESSAGE = "let's start!"
 
 FIRST_STAGE_INDEX = 0
 
+LETTER_GUESSED_SEPARATOR = " -> "
+
 
 # this gets the file name
 def input_file():
@@ -130,7 +132,7 @@ def showcase_progress(user_progress):
 # this prints that the guessing was an invalid character or already guessed
 def invalid_input_showcase(old_letters_guessed):
     print(INVALID_INPUT_SIGN)
-    result_str = " -> ".join(sorted(old_letters_guessed))
+    result_str = LETTER_GUESSED_SEPARATOR.join(sorted(old_letters_guessed))
     print(result_str)
 
 
