@@ -25,7 +25,7 @@ def start_game():
     secret_word = choose_secret_word()
     if secret_word is not None:
         start_screen()
-    return secret_word
+    return secret_word.lower()
 
 
 # This function is the main controller, handles the game from start to finish
