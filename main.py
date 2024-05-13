@@ -4,12 +4,14 @@ from gameLogic import *
 
 MAX_TRIES = 6
 
-# path = C:\Users\seanr\PycharmProjects\pythonProject4\wordList.txt
 
-
-# choose the secret word, first input and validate the input for the file path and index then return the word chosen
-# from file
 def choose_secret_word():
+    """
+    choose the secret word, first input and validate the input for the file path and index then return the word chosen
+    from file
+    :return: word from file
+    :rtype: str
+    """
     file_path = input_file()
     while not os.path.isfile(file_path):
         file_path = input_file()
@@ -19,8 +21,14 @@ def choose_secret_word():
     return choose_word_from_file(file_path, int(index))
 
 
-# calls the necessary functions to choose the word, and show the user the opening screen, returns the secret word chosen
 def start_game():
+    """
+    Calls the necessary functions to choose the word, and show the user the opening screen,
+    returns the secret word chosen
+
+    :return: secret word (word from file)
+    :rtype: str
+    """
     opening_screen()
     secret_word = choose_secret_word()
     if secret_word is not None:
@@ -29,8 +37,11 @@ def start_game():
     return secret_word
 
 
-# This function is the main controller, handles the game from start to finish
 def handleGame():
+    """
+    This function is the main controller, handles the game from start to finish
+    :return: Nothing
+    """
     secret_word = start_game()
     if secret_word is None:
         return
